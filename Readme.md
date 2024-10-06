@@ -18,14 +18,17 @@ The project is designed to manage tasks associated with projects, including trac
 
 JWT-based authentication.
 Users can log in and get tokens to access the API.
+
 2. Project Management:
 
 Users can create projects with unique names and descriptions.
 Users can add multiple members (users) to their projects.
+
 3. Task Management:
 
 Users can perform CRUD (Create, Read, Update, Delete) operations on tasks within their projects.
 Each task has a title, description, status, and due date.
+
 4. Soft Delete:
 
 Projects and tasks are not physically deleted from the database but are marked as deleted (soft delete).
@@ -59,27 +62,6 @@ Navigate to http://127.0.0.1:8000/admin to log in using your superuser credentia
 - `/api/tasks/`: Create, read,
 - `/api/tasks/{task-id}/`:update, delete tasks.
 
-## Project Structure
-project_manager/
-├── manage.py
-├── project_manager/
-│   ├── __init__.py
-│   ├── settings.py
-│   ├── urls.py
-│   ├── wsgi.py
-├── project_management/
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── apps.py
-│   ├── models.py
-│   ├── serializers.py
-│   ├── views.py
-│   ├── urls.py
-├──── README.md
-├──── requirements.txt
-├──── project manager.postman_collection.json
-├──── userdetails.txt
-└──── db.sqlite3
 
 
 # Author

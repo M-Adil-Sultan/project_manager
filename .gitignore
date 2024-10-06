@@ -1,0 +1,54 @@
+/venv/ 
+/myenv/
+myenv
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.env
+
+# Logs and databases #
+######################
+*.log
+*.sql
+# *.sqlite3
+*.db
+
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+mydata/.xlsx
+*.xls
+*.csv
+mydata/SocialLabsTrainingFormat.xlsx
+chatbot/__pycache__/
+chatbot/migrations/__pycache__/
+django_chatbot/__pycache__/
+django_chatbot/settings/__pycache__/
+train/__pycache__/
+train/migrations/__pycache__/
+Dockerfile

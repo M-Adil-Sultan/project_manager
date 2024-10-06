@@ -1,0 +1,24 @@
+superuser
+{
+    "username": "admin",
+    "password": "marvel123?"
+}
+
+
+
+
+simple users
+{
+    "username": "ironman",
+    "password": "starkltd",
+    "email": "dad@gmail.com",
+    "first_name": "Tony",
+    "last_name": "Stark"
+}
+{
+    "username": "spiderman",
+    "password": "web3",
+    "email": "spidey@gmail.com",
+    "first_name": "Peter",
+    "last_name": "Parker"
+}

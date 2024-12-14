@@ -27,7 +27,6 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['id', 'username', 'email']
 
 class ProjectSerializer(serializers.ModelSerializer):
-    print(f"I am in serializer")
     members = UserSerializer(many=True, read_only=True)
     tasks = TaskSerializer(many=True, read_only=True)
 

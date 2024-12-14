@@ -52,3 +52,4 @@ django_chatbot/settings/__pycache__/
 train/__pycache__/
 train/migrations/__pycache__/
 Dockerfile
+*__pycache__

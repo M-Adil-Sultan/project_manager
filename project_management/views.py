@@ -21,11 +21,9 @@ class UserRegistrationView(generics.CreateAPIView):
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
-    # print(f"I am in ProjectView" 
     queryset = Project.objects.filter(is_deleted=False)
     serializer_class = ProjectSerializer
     permission_classes = [IsAuthenticated]
-    # print(f"I am in queryset {queryset} serilizer_class {serializer_class} permission {permission_classes}")
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)

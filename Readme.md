@@ -56,6 +56,7 @@ Postman (for testing API endpoints)
 
 Navigate to http://127.0.0.1:8000/admin to log in using your superuser credentials (available in userdetails.txt).
 
+> [!NOTE]
 > Postman collection is provided in the repository. Import the collection in postman to access the APIs
 
 ## Endpoints

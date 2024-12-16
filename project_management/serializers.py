@@ -17,9 +17,19 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 
 
 class TaskSerializer(serializers.ModelSerializer):
+    dependencies = serializers.PrimaryKeyRelatedField(
+        queryset=Task.objects.all(), many=True, required=False
+    )
+    assigned_to = serializers.PrimaryKeyRelatedField(
+        queryset=User.objects.all(), required=False, allow_null=True
+    )
+
     class Meta:
         model = Task
-        fields = ['id', 'project', 'title', 'description', 'status', 'due_date', 'is_deleted']
+        fields = [
+            'id', 'project', 'title', 'description', 'status', 'priority',
+            'due_date', 'is_deleted', 'dependencies', 'assigned_to'
+        ]
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -36,7 +46,6 @@ class ProjectSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'description', 'members', 'tasks', 'is_deleted']
 
     def create(self, validated_data):
-        print(f"I am in create")
         
         members = validated_data.pop('members', [])
         project = Project.objects.create(**validated_data)

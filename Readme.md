@@ -1,6 +1,7 @@
 # Project Management System
 
 ## Overview
+
 This is a simple Project Management System API built using Django and Django REST Framework (DRF). The application allows users to:
 
 Authenticate using JWT (JSON Web Tokens)
@@ -11,9 +12,10 @@ Implement soft delete functionality for both projects and tasks
 The project is designed to manage tasks associated with projects, including tracking the status and due dates of tasks, with authentication and permissions based on JWT.
 
 > [!NOTE]
-> As common practice SQLite3 database is not commited in repository, however I have commited SQLite3 database in repository for evidence of working project and you don't have to apply and run migrations. 
+> As common practice SQLite3 database is not commited in repository, however I have commited SQLite3 database in repository for evidence of working project and you don't have to apply and run migrations.
 
 ## Features
+
 1. User Authentication:
 
 JWT-based authentication.
@@ -34,7 +36,9 @@ Each task has a title, description, status, and due date.
 Projects and tasks are not physically deleted from the database but are marked as deleted (soft delete).
 
 ## Setup Instructions
+
 ### Prerequisites
+
 Python 3.x
 Django 5.1.1
 Django REST Framework (DRF)
@@ -43,7 +47,7 @@ Postman (for testing API endpoints)
 
 1. Clone the repository.
 2. Create a Virtual Environment: `python -m venv myenv`
-`source myenv/bin/activate   # On Windows, use `myenv\Scripts\activate``
+   `source myenv/bin/activate   # On Windows, use `myenv\Scripts\activate``
 3. Install dependencies using `pip install -r requirements.txt`.
 4. Run migrations: `python manage.py migrate`.
 5. Create a superuser (optional) : `python manage.py createsuperuser`.
@@ -51,6 +55,8 @@ Postman (for testing API endpoints)
 7. Access the Django Admin Panel:
 
 Navigate to http://127.0.0.1:8000/admin to log in using your superuser credentials (available in userdetails.txt).
+
+> Postman collection is provided in the repository. Import the collection in postman to access the APIs
 
 ## Endpoints
 
@@ -61,9 +67,8 @@ Navigate to http://127.0.0.1:8000/admin to log in using your superuser credentia
 - `/api/projects/{project-id}/add_user/`: Add member to the project
 - `/api/tasks/`: Create, read,
 - `/api/tasks/{task-id}/`:update, delete tasks.
-
-
+- `/api/tasks/notify_due_tasks`:send email to notify due date
 
 # Author
-## Adil Sultan - Developer and Maintainer of this project.
 
+## Adil Sultan - Developer and Maintainer of this project.

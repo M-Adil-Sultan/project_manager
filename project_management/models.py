@@ -19,12 +19,20 @@ class Task(models.Model):
         ('in_progress', 'In Progress'),
         ('completed', 'Completed')
     ]
+    PRIORITY_CHOICES = [
+        ('high', 'High'),
+        ('medium', 'Medium'),
+        ('low', 'Low')
+    ]
 
     project = models.ForeignKey(Project, related_name='tasks', on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     description = models.TextField()
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
+    priority = models.CharField(max_length=20, choices=PRIORITY_CHOICES, default='medium')
     due_date = models.DateField()
+    dependencies = models.ManyToManyField('self', symmetrical=False, blank=True, related_name='dependent_tasks')
+    assigned_to = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL, related_name='assigned_tasks')
     is_deleted = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
